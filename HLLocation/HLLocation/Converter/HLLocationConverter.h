@@ -1,33 +1,15 @@
-# HLLocation
-iOS坐标转换和坐标导航工具类
+//
+//  HLLocationConverter.h
+//  HLLocation
+//
+//  Created by JJB_iOS on 2022/6/8.
+//
 
-##### 支持使用CocoaPods引入, Podfile文件中添加:
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-``` objc
-pod 'HLLocation', '1.0.0'
-```
+@interface HLLocationConverter : NSObject
 
-如果只想导入坐标转换
-
-```objc
-pod 'HLLocation/Converter', '1.0.0'
-```
-
-
-
-坐标导航基本使用方法:<p>
-
-``` objc
-CLLocationCoordinate2D location = CLLocationCoordinate2DMake(29.563475, 106.583541);
-[HLLocationNavigation navToLocation:location
-                       locationType:HLLocationTypeBD09
-                            address:@"解放碑"
-                             fromVC:self];
-```
-
-坐标转换：
-
-``` objc
 /**
  *    @brief    世界标准地理坐标(WGS-84) 转换成 中国国测局地理坐标（GCJ-02）<火星坐标>
  *
@@ -92,20 +74,5 @@ CLLocationCoordinate2D location = CLLocationCoordinate2DMake(29.563475, 106.5835
  *    @return    世界标准地理坐标（WGS-84）
  */
 + (CLLocationCoordinate2D)bd09ToWgs84:(CLLocationCoordinate2D)location;
-```
 
-
-
-# Requirements
-
-iOS 10.0 +, Xcode 7.0 +
-
-# Version
-
-* 1.0.0 :
-
-  完成HLLocation基础搭建
-
-# License
-
-HLLocation is available under the MIT license. See the LICENSE file for more info.
+@end
